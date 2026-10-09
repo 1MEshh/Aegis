@@ -1,0 +1,17 @@
+# Aegis - Build and test artifacts
+bin/
+build/
+*.o
+*.d
+*.a
+*.so
+test_runner
+tests/test_runner
+
+# Temporary and output files
+*.tmp
+*.log
+.cache/
+sarif_report.json
+scan_output.json
+audit_report.json
