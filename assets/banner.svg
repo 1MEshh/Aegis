@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440">
+  <defs>
+    <!-- Background Linear Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C14"/>
+      <stop offset="50%" stop-color="#0E1626"/>
+      <stop offset="100%" stop-color="#05080E"/>
+    </linearGradient>
+
+    <!-- Cyan Glow Gradient -->
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#0077FE"/>
+    </linearGradient>
+
+    <!-- Emerald Glow Gradient -->
+    <linearGradient id="emerald-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Shield Gradient -->
+    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#0051A8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#002147" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#16253B" stroke-width="0.8" stroke-opacity="0.5"/>
+    </pattern>
+
+    <!-- Card Shadow -->
+    <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="440" fill="url(#bg-grad)"/>
+
+  <!-- Subtle Forensic Grid Overlay -->
+  <rect width="1200" height="440" fill="url(#grid)"/>
+
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#cyan-glow)"/>
+
+  <!-- Shield Vector Icon -->
+  <g transform="translate(85, 75)" filter="url(#glow-filter)">
+    <!-- Outer Shield Frame -->
+    <path d="M110 20 L200 60 L200 170 C200 240 110 290 110 290 C110 290 20 240 20 170 L20 60 Z"
+          fill="url(#shield-grad)" stroke="#00F0FF" stroke-width="3" stroke-linejoin="round"/>
+    <!-- Inner Core Shield -->
+    <path d="M110 45 L180 78 L180 165 C180 220 110 262 110 262 C110 262 40 220 40 165 L40 78 Z"
+          fill="none" stroke="#0077FE" stroke-width="2" stroke-dasharray="6,4"/>
+    <!-- Core Crosshair Reticle -->
+    <circle cx="110" cy="155" r="32" fill="none" stroke="#10B981" stroke-width="2.5"/>
+    <circle cx="110" cy="155" r="14" fill="#00F0FF" fill-opacity="0.3" stroke="#00F0FF" stroke-width="2"/>
+    <line x1="110" y1="105" x2="110" y2="135" stroke="#10B981" stroke-width="2.5"/>
+    <line x1="110" y1="175" x2="110" y2="205" stroke="#10B981" stroke-width="2.5"/>
+    <line x1="60" y1="155" x2="90" y2="155" stroke="#10B981" stroke-width="2.5"/>
+    <line x1="130" y1="155" x2="160" y2="155" stroke="#10B981" stroke-width="2.5"/>
+  </g>
+
+  <!-- Title & Branding -->
+  <text x="350" y="145" font-family="'JetBrains Mono', 'Fira Code', 'Ubuntu Mono', 'Courier New', monospace"
+        font-size="64" font-weight="900" fill="#FFFFFF" letter-spacing="4">AEGIS</text>
+
+  <!-- Accent Subline Under Title -->
+  <rect x="352" y="162" width="580" height="3" fill="url(#cyan-glow)"/>
+
+  <!-- Subtitle -->
+  <text x="352" y="200" font-family="'JetBrains Mono', 'Segoe UI', system-ui, sans-serif"
+        font-size="19" font-weight="600" fill="#00F0FF" letter-spacing="1.5">LINUX IN-MEMORY EVASION &amp; ROOTKIT DETECTION ENGINE</text>
+
+  <!-- Description Body -->
+  <text x="352" y="235" font-family="'JetBrains Mono', 'Segoe UI', system-ui, sans-serif"
+        font-size="14" font-weight="400" fill="#8B949E">
+    C++20 /proc VMA parser, reflective ELF auditor, memfd detector &amp; cross-view cloaked PID hunter
+  </text>
+
+  <!-- Feature Badges -->
+  <g transform="translate(352, 270)">
+    <!-- Badge 1: C++20 -->
+    <rect x="0" y="0" width="110" height="30" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+    <text x="55" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#58A6FF" text-anchor="middle">C++20 CORE</text>
+
+    <!-- Badge 2: MITRE T1055 -->
+    <rect x="120" y="0" width="135" height="30" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+    <text x="187" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#F85149" text-anchor="middle">MITRE T1055</text>
+
+    <!-- Badge 3: MITRE T1014 -->
+    <rect x="265" y="0" width="135" height="30" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+    <text x="332" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#F0883E" text-anchor="middle">MITRE T1014</text>
+
+    <!-- Badge 4: SARIF v2.1.0 -->
+    <rect x="410" y="0" width="145" height="30" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+    <text x="482" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#3FB950" text-anchor="middle">SARIF v2.1.0</text>
+
+    <!-- Badge 5: ZERO LEAK -->
+    <rect x="565" y="0" width="125" height="30" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1.2"/>
+    <text x="627" y="20" font-family="monospace" font-size="12" font-weight="700" fill="#D2A8FF" text-anchor="middle">ZERO LEAK</text>
+  </g>
+
+  <!-- Technical Spec Footer Line -->
+  <g transform="translate(352, 345)">
+    <rect x="0" y="0" width="760" height="42" rx="6" fill="#0D1117" stroke="#21262D" stroke-width="1"/>
+    <text x="20" y="26" font-family="monospace" font-size="12" fill="#7EE787">$</text>
+    <text x="36" y="26" font-family="monospace" font-size="12" fill="#C9D1D9">aegis scan --proc /proc --format sarif --fail-on critical</text>
+    <text x="560" y="26" font-family="monospace" font-size="12" fill="#8B949E">[ Delta S_kernel \ S_getdents ]</text>
+  </g>
+</svg>
