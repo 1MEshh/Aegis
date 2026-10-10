@@ -1,0 +1,43 @@
+name: Aegis CI/CD Verification Matrix
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: C++20 Build, Automated Tests & Security Audit
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler: [ g++-13, clang++-17 ]
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Install Build Toolchain & Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential imagemagick ffmpeg
+
+      - name: Build and Run Automated Tests
+        run: |
+          make clean
+          make test CXX=${{ matrix.compiler }}
+
+      - name: Execute Security & Zero-Leak Audit Gate
+        run: |
+          bash scripts/security-audit.sh
+
+      - name: Verify SARIF v2.1.0 Exporter Output
+        run: |
+          ./bin/aegis export-sarif --proc fixtures/mock_proc --output aegis-report.sarif
+          test -s aegis-report.sarif
+
+      - name: Upload Security SARIF to GitHub CodeQL
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: aegis-report.sarif
