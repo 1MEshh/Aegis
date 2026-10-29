@@ -337,8 +337,3 @@ bash scripts/security-audit.sh
 
 ---
 
-## Author & License
-
-- **Author**: `1MEshh` (`152591660+1MEshh@users.noreply.github.com`)
-- **Repository**: [https://github.com/1MEshh/Aegis](https://github.com/1MEshh/Aegis)
-- **License**: MIT Open Source License
